@@ -291,7 +291,7 @@ abstract class Address {
 	 * @return string|null - Name of the Province or null if none
 	 * @since 3.0
 	 */
-	public function getProvince(): ?string {
+	public function getProvince() {
 		return $this->province;
 	}
 
@@ -301,7 +301,7 @@ abstract class Address {
 	 * @param string|null $province - Name of the Province or null for none
 	 * @since 3.0
 	 */
-	public function setProvince(?string $province): void {
+	public function setProvince($province) {
 		$this->province = $province;
 	}
 
