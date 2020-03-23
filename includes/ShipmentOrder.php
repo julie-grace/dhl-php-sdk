@@ -305,7 +305,8 @@ class ShipmentOrder {
 	 * @return LabelFormat|null - Label-Format | null means DHL-Default
 	 * @since 3.0
 	 */
-	public function getLabelFormat(): ?LabelFormat {
+	public function getLabelFormat()
+	{
 		return $this->labelFormat;
 	}
 
@@ -315,7 +316,8 @@ class ShipmentOrder {
 	 * @param LabelFormat|null $labelFormat - Label-Format | null uses DHL-Default
 	 * @since 3.0
 	 */
-	public function setLabelFormat(?LabelFormat $labelFormat): void {
+	public function setLabelFormat($labelFormat)
+	{
 		$this->labelFormat = $labelFormat;
 	}
 
