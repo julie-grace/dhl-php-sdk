@@ -357,7 +357,8 @@ class ShipmentDetails {
 	 * @return string|null - Name of a Cost center or null for none
 	 * @since 3.0
 	 */
-	public function getCostCentre(): ?string {
+	public function getCostCentre()
+	{
 		return $this->costCentre;
 	}
 
@@ -367,7 +368,8 @@ class ShipmentDetails {
 	 * @param string|null $costCentre - Name of a Cost center or null for none
 	 * @since 3.0
 	 */
-	public function setCostCentre(?string $costCentre): void {
+	public function setCostCentre($costCentre)
+	{
 		$this->costCentre = $costCentre;
 	}
 
