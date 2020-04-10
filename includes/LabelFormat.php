@@ -112,7 +112,7 @@ class LabelFormat {
 	 *
 	 * @return string|null - Group-Profile name | null uses default from DHL
 	 */
-	public function getGroupProfileName(): ?string {
+	public function getGroupProfileName() {
 		return $this->groupProfileName;
 	}
 
@@ -121,7 +121,7 @@ class LabelFormat {
 	 *
 	 * @param string|null $groupProfileName - Group-Profile name | null uses default from DHL
 	 */
-	public function setGroupProfileName(?string $groupProfileName): void {
+	public function setGroupProfileName($groupProfileName) {
 		$this->groupProfileName = $groupProfileName;
 	}
 
@@ -130,7 +130,7 @@ class LabelFormat {
 	 *
 	 * @return string|null - Label-Format | null uses default from DHL
 	 */
-	public function getLabelFormat(): ?string {
+	public function getLabelFormat() {
 		return $this->labelFormat;
 	}
 
@@ -139,7 +139,7 @@ class LabelFormat {
 	 *
 	 * @param string|null $labelFormat - Label-Format | null uses default from DHL
 	 */
-	public function setLabelFormat(?string $labelFormat): void {
+	public function setLabelFormat($labelFormat) {
 		$this->labelFormat = $labelFormat;
 	}
 
@@ -148,7 +148,7 @@ class LabelFormat {
 	 *
 	 * @return string|null - Return-Label-Format | null uses default from DHL
 	 */
-	public function getLabelFormatRetoure(): ?string {
+	public function getLabelFormatRetoure() {
 		return $this->labelFormatRetoure;
 	}
 
@@ -157,7 +157,7 @@ class LabelFormat {
 	 *
 	 * @param string|null $labelFormatRetoure - Return-Label-Format | null uses default from DHL
 	 */
-	public function setLabelFormatRetoure(?string $labelFormatRetoure): void {
+	public function setLabelFormatRetoure($labelFormatRetoure) {
 		$this->labelFormatRetoure = $labelFormatRetoure;
 	}
 
@@ -166,7 +166,7 @@ class LabelFormat {
 	 *
 	 * @return bool|null - Should labels printed together | null uses default from DHL
 	 */
-	public function getCombinedPrinting(): ?bool {
+	public function getCombinedPrinting() {
 		return $this->combinedPrinting;
 	}
 
@@ -175,7 +175,7 @@ class LabelFormat {
 	 *
 	 * @param bool|null $combinedPrinting - Should labels printed together | null uses default from DHL
 	 */
-	public function setCombinedPrinting(?bool $combinedPrinting): void {
+	public function setCombinedPrinting($combinedPrinting) {
 		$this->combinedPrinting = $combinedPrinting;
 	}
 
@@ -184,7 +184,7 @@ class LabelFormat {
 	 *
 	 * @return string|null - Unused | null uses default from DHL
 	 */
-	private function getFeederSystem(): ?string {
+	private function getFeederSystem() {
 		return $this->feederSystem;
 	}
 
@@ -193,7 +193,7 @@ class LabelFormat {
 	 *
 	 * @param string|null $feederSystem - Unused | null uses default from DHL
 	 */
-	private function setFeederSystem(?string $feederSystem): void {
+	private function setFeederSystem($feederSystem) {
 		$this->feederSystem = $feederSystem;
 	}
 
@@ -202,7 +202,7 @@ class LabelFormat {
 	 *
 	 * @return string|null - DHL-Bool string or null for default
 	 */
-	public function getCombinedPrintingLabel(): ?string {
+	public function getCombinedPrintingLabel() {
 		if($this->getCombinedPrinting() === null)
 			return null;
 
