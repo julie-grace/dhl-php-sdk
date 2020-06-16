@@ -62,6 +62,13 @@ class LabelData extends Version implements LabelResponse {
 	private $shipmentNumber = null;
 
 	/**
+	 * Return-Shipment-Number
+	 *
+	 * @var null|string $returnShipmentNumber - Return-Shipment-Number | null if not set
+	 */
+	private $returnShipmentNumber = null;
+
+	/**
 	 * Label URL/Base64-Data - Can also have the return label in one
 	 *
 	 * @var null|string $label - Label-URL or Base64-Label-Data | null if not set
@@ -227,12 +234,30 @@ class LabelData extends Version implements LabelResponse {
 	}
 
 	/**
+	 * Getter for Return-Shipment-Number
+	 *
+	 * @return null|string - Return-Shipment-Number or null if not set
+	 */
+	public function getReturnShipmentNumber() {
+		return $this->returnShipmentNumber;
+	}
+
+	/**
 	 * Setter for Shipment-Number
 	 *
 	 * @param null|string $shipment_number - Shipment-Number or null for not set
 	 */
 	private function setShipmentNumber($shipment_number) {
 		$this->shipmentNumber = $shipment_number;
+	}
+
+	/**
+	 * Setter for Return-Shipment-Number
+	 *
+	 * @param null|string $return_shipment_number - Return-Shipment-Number or null for not set
+	 */
+	private function setReturnShipmentNumber($return_shipment_number) {
+		$this->returnShipmentNumber = $return_shipment_number;
 	}
 
 	/**
@@ -358,6 +383,12 @@ class LabelData extends Version implements LabelResponse {
 			$this->setShipmentNumber((string) $response->shipmentNumber);
 		else if(isset($labelResponse->shipmentNumber))
 			$this->setShipmentNumber((string) $labelResponse->shipmentNumber);
+
+		// Get Return-Shipment-Number
+		if(isset($response->returnShipmentNumber))
+			$this->setReturnShipmentNumber((string) $response->returnShipmentNumber);
+		else if(isset($labelResponse->shipmentNumber))
+			$this->setReturnShipmentNumber((string) $labelResponse->returnShipmentNumber);
 
 		// Get Label-Data
 		if(isset($labelResponse->labelUrl))

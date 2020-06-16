@@ -49,7 +49,7 @@ $credentials->setUser('Your-DHL-Account'); // DHL-Account (Same as if you Login 
 $credentials->setSignature('Your-DHL-Account-Password'); // DHL-Account-Password
 $credentials->setEkp('EKP-Account-Number'); // Number of your Account (Provide at least the first 10 digits)
 $credentials->setApiUser('appId'); // Your Applications-ID (You can find it in your DHL-Dev-Account)
-$credentials->setApiPassword('appToken'); // Your Applications-Token (You can find it also where you found the App-Id) 
+$credentials->setApiPassword('appToken'); // Your Applications-Token (You can find it also where you found the App-Id)
 ```
 
 You've set all of the Required Information so far. Now you can Perform several Actions.
@@ -114,7 +114,7 @@ Setup all **Required** Information
 $sender->setName((string) 'Organisation Petschko'); // Can be a Person-Name or Company Name
 
 // You need to seperate the StreetName from the Number and set each one to its own setter
-// Example Full Address: "Oberer Landweg 12a" 
+// Example Full Address: "Oberer Landweg 12a"
 $sender->setStreetName((string) 'Oberer Landweg');
 $sender->setStreetNumber((string) '12a'); // A Number is ALWAYS needed
 
@@ -263,7 +263,7 @@ $shipmentOrder->setSequenceNumber((string) '1'); // Default: '1'
 
 $shipmentOrder->setPrintOnlyIfReceiverIsValid((bool) true); // Only print label on a valid adress - Default: null -> Uses DHL-Default
 
-/* 
+/*
 * You can get the Label as URL or as Base64-Data-String - set it how you want to have it
 * Possible Values:
 * \Petschko\DHL\BusinessShipment::RESPONSE_TYPE_URL = 'URL';
@@ -344,7 +344,7 @@ You can get several Information from the `\Petschko\DHL\Response` Object. Please
 
 ### Update a Shipment
 
-It works the same like creating a Shipment, but you need to specify the Shipment number, you want to update! You call this 
+It works the same like creating a Shipment, but you need to specify the Shipment number, you want to update! You call this
 request via `$dhl->updateShipmentOrder($shipmentNumber)`.
 ```php
 	$dhl->updateShipmentOrder((string) $shipmentNumber)
@@ -503,6 +503,7 @@ I will explain which values you can get from the Response-Object
 
 // You can still use these for SINGLE-Requests
 (string) $response->getShipmentNumber(); // Returns the Shipment-Number of the Request or null
+(string) $response->getReturnShipmentNumber(); // Returns the Return-Shipment-Number of the Request or null
 (string) $response->getLabel(); // Returns the Label URL or Base64-Label-String or null
 (string) $response->getReturnLabel(); // Returns the ReturnLabel (URL/B64) or null
 (string) $response->getExportDoc(); // Returns the Export-Document (URL/B64) or null (Can only be obtained if the Export-Doc Object was added to the Shipment request)
@@ -528,6 +529,7 @@ You can get the values like this: (For the first item for example)
 
 // Info-Values
 (string) $response->getLabelData(0)->getShipmentNumber(); // Returns the Shipment-Number of the 1st Request or null
+(string) $response->getLabelData(0)->getReturnShipmentNumber(); // Returns the Return-Shipment-Number of the 1st Request or null
 (string) $response->getLabelData(0)->getLabel(); // Returns the Label URL or Base64-Label-String of the 1st Request or null
 (string) $response->getLabelData(0)->getReturnLabel(); // Returns the ReturnLabel (URL/B64) of the 1st Request or null
 (string) $response->getLabelData(0)->getExportDoc(); // Returns the Export-Document (URL/B64) of the 1st Request or null (Can only be obtained if the Export-Doc Object was added to the Shipment request)
@@ -540,6 +542,7 @@ Just to show you a simple loop, how you can handle every Request-Item:
 for($i = 0; $i < $response->countLabelData(); $i++) {
 	// For example get the Shipment-Number of every item
 	$shipmentNumber = $response->getLabelData($i)->getShipmentNumber();
+    $returnShipmentNumber = $response->getLabelData($i)->getReturnShipmentNumber();
 
 	// (...) Do stuff with every Request-Item here
 }
