@@ -28,6 +28,7 @@ class Response extends Version implements LabelResponse {
 	 * - Response::DHL_ERROR_AUTH_FAILED -> Authentication has failed
 	 * - Response::DHL_ERROR_HARD_VAL_ERROR -> A hard-validation Error has occurred
 	 * - Response::DHL_ERROR_UNKNOWN_SHIPMENT_NUMBER -> Given Shipment-Number is unknown
+	 * - Response::DHL_ERROR_INVALID_GKP_USERNAME_OR_PASSWORD -> Invalid GKP Username or Password
 	 */
 	const DHL_ERROR_NOT_SET = -1;
 	const DHL_ERROR_NO_ERROR = 0;
@@ -57,6 +58,7 @@ class Response extends Version implements LabelResponse {
 	 * - Response::DHL_ERROR_AUTH_FAILED (1001) -> Authentication has failed
 	 * - Response::DHL_ERROR_HARD_VAL_ERROR (1101) -> A hard-validation Error has occurred
 	 * - Response::DHL_ERROR_UNKNOWN_SHIPMENT_NUMBER (2000) -> Given Shipment-Number is unknown
+	 * - Response::DHL_ERROR_INVALID_GKP_USERNAME_OR_PASSWORD -> Invalid GKP Username or Password
 	 *
 	 * @var int $statusCode - Status-Code
 	 */
