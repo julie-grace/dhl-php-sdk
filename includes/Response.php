@@ -37,6 +37,7 @@ class Response extends Version implements LabelResponse {
 	const DHL_ERROR_AUTH_FAILED = 1001;
 	const DHL_ERROR_HARD_VAL_ERROR = 1101;
 	const DHL_ERROR_UNKNOWN_SHIPMENT_NUMBER = 2000;
+	const DHL_ERROR_INVALID_GKP_USERNAME_OR_PASSWORD = 118;
 
 	/**
 	 * Manifest PDF-Data as Base64-String
