@@ -137,29 +137,6 @@ abstract class Address {
 	private $state = null;
 
 	/**
-	 * Address constructor.
-	 */
-	public function __construct() {
-		// VOID
-	}
-
-	/**
-	 * Clears the Memory
-	 */
-	public function __destruct() {
-		unset($this->streetName);
-		unset($this->streetNumber);
-		unset($this->addressAddition);
-		unset($this->dispatchingInfo);
-		unset($this->zip);
-		unset($this->location);
-		unset($this->province);
-		unset($this->country);
-		unset($this->countryISOCode);
-		unset($this->state);
-	}
-
-	/**
 	 * Get the Street name
 	 *
 	 * @return string - Street name

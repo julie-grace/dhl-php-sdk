@@ -98,26 +98,6 @@ class BankData {
 	private $accountReference = null;
 
 	/**
-	 * BankData constructor.
-	 */
-	public function __construct() {
-		// VOID
-	}
-
-	/**
-	 * Clears Memory
-	 */
-	public function __destruct() {
-		unset($this->accountOwnerName);
-		unset($this->bankName);
-		unset($this->iban);
-		unset($this->note1);
-		unset($this->note2);
-		unset($this->bic);
-		unset($this->accountReference);
-	}
-
-	/**
 	 * Get the Account Owner Name
 	 *
 	 * @return string - Account Owner Name
